@@ -16,12 +16,13 @@ public class OrderItemService {
     }
 
     public OrderItem saveOrderItem(OrderItem orderItem) {
-        log.info("Inside saveOrderItem method of OrderItemService");
+//        log.info("Inside findOrderItemById method of OrderItemService");
         return orderItemRepository.save(orderItem);
     }
 
     public OrderItem findOrderItemById(Long orderItemId) {
-        log.info("Inside findOrderItemById method of OrderItemService");
+//        log.info("Inside findOrderItemById method of OrderItemService");
         return orderItemRepository.findById(orderItemId).orElseThrow(() -> new RuntimeException("Result not found"));
     }
+
 }

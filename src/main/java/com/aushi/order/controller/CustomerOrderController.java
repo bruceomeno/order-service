@@ -19,14 +19,12 @@ public class CustomerOrderController {
     }
 
     @PostMapping("/")
-    public CustomerOrder saveCustomerOrder(@RequestBody CustomerOrder customerOrder) {
-        log.info("Inside saveCustomerOrder method of CustomerOrderController");
-        return customerOrderService.saveCustomerOrder(customerOrder);
+    public CustomerOrder saveOrder(@RequestBody CustomerOrder customerOrder) {
+        return customerOrderService.saveOrder(customerOrder);
     }
 
     @GetMapping("/{id}")
-    public CustomerOrder findCustomerOrderById(@PathVariable("id") Long orderId){
-        log.info("Inside findCustomerOrderById method of CustomerOrderController");
-        return customerOrderService.findCustomerByOrderId(orderId);
+    public CustomerOrder findOrderById(@PathVariable("id") Long orderId) {
+        return customerOrderService.findByOrderId(orderId);
     }
 }

@@ -19,10 +19,8 @@ public class CustomerOrder {
     private Long id;
     private Long customerId;
 
-    @OneToMany(
-            mappedBy = "customerOrder",
+    @OneToMany(mappedBy = "customerOrder",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+            orphanRemoval = true)
     private List<OrderItem> orderItems = new ArrayList<>();
 }
