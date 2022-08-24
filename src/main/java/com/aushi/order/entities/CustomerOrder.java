@@ -1,5 +1,6 @@
 package com.aushi.order.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class CustomerOrder {
     private Long id;
     private Long customerId;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "customerOrder",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
