@@ -37,7 +37,7 @@ public class CustomerOrderService {
         CustomerOrderResponseTemplateVO customerOrderResponseTemplateVO = new CustomerOrderResponseTemplateVO();
         CustomerOrder customerOrder = customerOrderRepository.findCustomerOrderById(customerId);
 
-        Customer customer = restTemplate.getForObject("http://localhost:9001/customers/" + customerId, Customer.class);
+        Customer customer = restTemplate.getForObject("http://CUSTOMER-SERVICE/customers/" + customerId, Customer.class);
 
         customerOrderResponseTemplateVO.setCustomer(customer);
         customerOrderResponseTemplateVO.setCustomerOrder(customerOrder);
